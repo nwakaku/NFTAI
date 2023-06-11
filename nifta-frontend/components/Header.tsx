@@ -83,12 +83,12 @@ export default function Header() {
   }, [router.asPath]);
 
   return (
-    <div className="sticky top-0 z-10 flex justify-center mb-3">
+    <div className="sticky top-0 z-10 flex justify-center mb-3 bg-gray-900 ">
       <div className="justify-self-center flex justify-between items-center px-6 sm:px-12 py-6	w-full max-w-screen-xl">
         <div className="flex items-center text-2xl">
           <Link href="/" legacyBehavior>
             <div>
-              NI<span className="text-blue-400">F</span>TA
+              NFT<span className="text-blue-400">AI</span>
             </div>
           </Link>
         </div>
