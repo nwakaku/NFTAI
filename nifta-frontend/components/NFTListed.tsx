@@ -114,7 +114,7 @@ export default function NFTOwned({ tokenID }: Props) {
             tokenListedData.price && (
               <div className="text-white">
                 Listed for {ethers.utils.formatEther(tokenListedData.price)}{" "}
-                TFUEL
+                $BITS
               </div>
             )}
         </div>

@@ -9,7 +9,7 @@ export default function Home() {
         </h1>
         <p className="text-base text-gray-300 sm:text-lg md:text-xl font-light w-10/12 md:w-7/12 text-center">
           Use the state of the art AI image models to create unique NFTs on the
-          Theta blockchain. List them on the marketplace to earn TFuel. Buy and
+          Theta blockchain. List them on the marketplace to earn $BITS. Buy and
           sell NFTs of your favorite creators.
         </p>
         <div className="flex gap-3 sm:gap-5 mt-2 text-sm sm:text-base">

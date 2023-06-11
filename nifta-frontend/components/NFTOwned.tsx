@@ -102,7 +102,7 @@ export default function NFTOwned({ tokenID }: Props) {
       return;
     }
     if (data.price <= 0) {
-      toast.error("Price must be greater than 0 TFUEL");
+      toast.error("Price must be greater than 0 $BITS");
       return;
     }
 
@@ -151,7 +151,7 @@ export default function NFTOwned({ tokenID }: Props) {
 
         <div className="my-2">
           {listed ? (
-            <div className="text-white">Listed for {price} TFUEL</div>
+            <div className="text-white">Listed for {price} $BITS</div>
           ) : (
             <form onSubmit={handleSubmit(onListItem)}>
               <label
@@ -168,7 +168,7 @@ export default function NFTOwned({ tokenID }: Props) {
                   type="number"
                   id="default-search"
                   className="block p-4 pl-10 text-xs text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                  placeholder="Price in TFUEL"
+                  placeholder="Price in $BITS"
                   // disabled={generateStatus === "progress"}
                   {...register("price", { required: true })}
                 />

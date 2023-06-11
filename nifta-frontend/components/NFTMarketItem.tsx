@@ -175,7 +175,7 @@ export default function NFTListed({ tokenID }: Props) {
 
           {tokenListedData && tokenListedData.isListed && !purchased && (
             <div className="text-white py-1">
-              Listed for {ethers.utils.formatEther(tokenListedData.price)} TFUEL
+              Listed for {ethers.utils.formatEther(tokenListedData.price)} $BITS
             </div>
           )}
 

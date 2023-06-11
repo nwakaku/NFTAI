@@ -18,28 +18,9 @@ const config = {
     before_timeout: 480000
   },
   
-  defaultNetwork: "theta_privatenet",
+  defaultNetwork: "mantle_testnet",
   networks: {
-    // theta_privatenet: {
-    //   url: "http://localhost:18888/rpc",
-    //   accounts: [
-    //     deployerPrivateKey
-    //   ],
-    //   chainId: 366,
-    //   gasPrice: 4000000000000
-    // },
-    // theta_testnet: {
-    //   url: `https://eth-rpc-api-testnet.thetatoken.org/rpc`,
-    //   accounts: [deployerPrivateKey],
-    //   chainId: 365,
-    //   gasPrice: 4000000000000
-    // },
-    // theta_mainnet: {
-    //   url: `https://eth-rpc-api.thetatoken.org/rpc`,
-    //   accounts: [deployerPrivateKey],
-    //   chainId: 361,
-    //   gasPrice: 4000000000000
-    // },
+    
     mantle_testnet: {
       url: "https://rpc.testnet.mantle.xyz/",
       accounts: [deployerPrivateKey], // Uses the private key from the .env file
