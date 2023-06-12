@@ -12,6 +12,12 @@ Beyond creating and selling NFTs, NftAI serves as a vibrant marketplace where ar
 
 NftAI represents a new frontier in the fusion of AI technology and blockchain innovation, revolutionizing the way we perceive and engage with digital art. By empowering artists and offering a unique platform for art enthusiasts, NftAI strives to redefine the art market and create a dynamic ecosystem that celebrates creativity, talent, and individuality.
 
+## Working Links
+- [Video Link](https://youtu.be/bf_bi5v2Ov4)
+- [URL link](https://nftai.vercel.app)
+
+
+
 ## Technologies Used
 - [Mantle blockchain](https://docs.mantle.xyz/network/introducing-mantle/)
 - [DALL-E image model](https://openai.com/blog/dall-e/)
