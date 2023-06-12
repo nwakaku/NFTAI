@@ -4,9 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { ConnectionContext } from "../pages/_app";
 
 const HARDHAT_NETWORK_ID = "31337";
-const THETA_MAINNET_NETWORK_ID = "0x169";
-const THETA_TESTNET_NETWORK_ID = "0x16d";
-const THETA_PRIVATENET_NETWORK_ID = "0x16e";
+const MANTLE_TESTNET_NETWORK_ID = "0x16d";
 
 // This is an error code that indicates that the user canceled a transaction
 const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
@@ -42,7 +40,7 @@ export default function Header() {
     }
 
     if (!checkNetwork()) {
-      alert("Please switch to Theta Mainnet/Testnet");
+      alert("Please switch to Mantle Mainnet/Testnet");
       return;
     }
   };
@@ -53,9 +51,7 @@ export default function Header() {
     }
 
     if (
-      window.ethereum.networkVersion === THETA_MAINNET_NETWORK_ID ||
-      window.ethereum.networkVersion === THETA_TESTNET_NETWORK_ID ||
-      window.ethereum.networkVersion === THETA_PRIVATENET_NETWORK_ID
+      window.ethereum.networkVersion === MANTLE_TESTNET_NETWORK_ID
     ) {
       return true;
     }
@@ -83,12 +79,12 @@ export default function Header() {
   }, [router.asPath]);
 
   return (
-    <div className="sticky top-0 z-10 flex justify-center mb-3 bg-gray-900 ">
-      <div className="justify-self-center flex justify-between items-center px-6 sm:px-12 py-6	w-full max-w-screen-xl">
+    <div className="sticky top-0 z-10 flex justify-center mb-3 bg-[#100a25] ">
+      <div className="justify-self-center flex justify-between items-center px-6 sm:px-12 py-3	w-full max-w-screen-xl">
         <div className="flex items-center text-2xl">
           <Link href="/" legacyBehavior>
             <div>
-              NFT<span className="text-blue-400">AI</span>
+              <span className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-2 py-2 rounded-lg">M</span>MantleAI
             </div>
           </Link>
         </div>

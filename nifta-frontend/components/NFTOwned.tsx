@@ -91,7 +91,7 @@ export default function NFTOwned({ tokenID }: Props) {
   
   if (tokenInfoLoading || tokenMetaData === null) {
     return (
-      <div className="relative mb-4 w-full h-64 md:h-80 bg-gray-900 rounded-lg ">
+      <div className="relative mb-4 w-full h-64 md:h-80 bg-[#100a25] rounded-lg ">
         <p className="text-lg">Loading...</p>
       </div>
     );

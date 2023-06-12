@@ -105,7 +105,7 @@ export default function NFTListed({ tokenID }: Props) {
 
   if (tokenListedDataLoading || !tokenListedData || !tokenMetaData) {
     return (
-      <div className="relative mb-4 w-full h-64 md:h-80 bg-gray-900 rounded-lg ">
+      <div className="relative mb-4 w-full h-64 md:h-80 bg-[#100a25] rounded-lg ">
         <p className="text-lg">Loading...</p>
       </div>
     );
@@ -113,7 +113,7 @@ export default function NFTListed({ tokenID }: Props) {
 
   if (tokenListedDataError) {
     return (
-      <div className="relative mb-4 w-full h-64 md:h-80 bg-gray-900 rounded-lg ">
+      <div className="relative mb-4 w-full h-64 md:h-80 bg-[#100a25] rounded-lg ">
         <p className="text-lg">An error occurred.</p>
       </div>
     );

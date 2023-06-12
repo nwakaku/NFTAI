@@ -61,7 +61,7 @@ export default function Market() {
   }
 
   return (
-    <div className="flex flex-col gap-4 justify-center items-center mb-10">
+    <div className="max-w-screen-xl flex flex-col gap-4 justify-center items-center mb-10">
       <div className="mb-4 text-xl flex space-x-3">
         <p className="font-semibold">NFTs listed in the Market</p>
         <button

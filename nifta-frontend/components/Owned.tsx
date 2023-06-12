@@ -63,7 +63,7 @@ export default function Owned() {
   }
 
   return (
-    <div className="flex flex-col gap-4 justify-center items-center mb-10">
+    <div className="flex max-w-screen-xl flex-col gap-4 justify-center items-center mb-10">
       <div className="mb-4 text-xl flex space-x-3">
         <p className="font-semibold">NFTs you own</p>
         <button

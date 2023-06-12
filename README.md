@@ -17,3 +17,4 @@ NftAI represents a new frontier in the fusion of AI technology and blockchain in
 - [DALL-E image model](https://openai.com/blog/dall-e/)
 - [React](https://reactjs.org/)
 - [Next.js](https://nextjs.org/)
+- [Web.storage](https://web3.storage/)

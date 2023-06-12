@@ -114,7 +114,7 @@ export default function Mint() {
     setMintingStatus("progress");
 
     const timestamp = Date.now().toString();
-    const msg = "Theta EdgeStore Call " + timestamp;
+    const msg = "SIgn transaction on Mantle " + timestamp;
 
     const sig = await window.ethereum.request({
       method: "personal_sign",
@@ -132,19 +132,6 @@ export default function Mint() {
     // For web3.storage
     const client = new Web3Storage({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDkyQmMzYmEyNEMwNzIyZUZkODg5NmIzOGQxYzI5ZWE0RUFiMjdiMjkiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODY0NjQzNjk1NjIsIm5hbWUiOiJmb3IgbmZ0YWkifQ.dyN1087A0XVpl12LBrjON3fxQLgQrRcAXpAW25YZ0IU" });
     const cid = await client.put([file]);
-    // const url = `https://dweb.link/ipfs/${cid}`;
-
-    // // Make a POST request to the API endpoint
-    // const uploadTask = axios.post("/api/edgestore", {
-    //   data: uriData,
-    //   auth: auth_token,
-    // });
-
-    // const uploadTaskResponse = await toast.promise(uploadTask, {
-    //   pending: "Uploading NFT metadata to the EdgeStore...",
-    //   success: "Uploaded NFT metadata to the EdgeStore!",
-    //   error: "Error uploading to EdgeStore",
-    // });
 
     const URI = cid;
 

@@ -2,29 +2,31 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center pt-8 md:pt-16 bg-gray-800 text-white overflow-x-hidden pb-8">
-      <div className="flex flex-col gap-6 items-center space-y-4">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-normal  w-3/4 md:w-1/2 text-center ">
-          AI meets NFTs on Theta.
-        </h1>
-        <p className="text-base text-gray-300 sm:text-lg md:text-xl font-light w-10/12 md:w-7/12 text-center">
-          Use the state of the art AI image models to create unique NFTs on the
-          Theta blockchain. List them on the marketplace to earn $BITS. Buy and
-          sell NFTs of your favorite creators.
-        </p>
-        <div className="flex gap-3 sm:gap-5 mt-2 text-sm sm:text-base">
-          <Link href="/create" legacyBehavior>
-            <button className="bg-blue-400 text-black font-semibold py-3 px-4 sm:px-8 md:px-12 rounded-lg hover:bg-white">
-              Get Started
-            </button>
-          </Link>
-          <Link href="/marketplace" legacyBehavior>
-            <button className="border-2 border-white-500 text-white-500 font-semibold py-3 px-4 sm:px-8 md:px-12 rounded-lg hover:bg-white hover:text-black">
-              View Marketplace
-            </button>
-          </Link>
+    <section className="bg-[#100a25]">
+      <div className="grid w-3/4 px-5 pt-10 pb-6 mx-auto lg:gap-8 xl:gap-0 lg:py-12 lg:grid-cols-12 lg:pt-16 space-x-8 bg-[#150f2b] rounded-lg">
+        <div className="mr-auto place-self-center lg:col-span-6">
+          <h1 className="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
+            Mantle Meets AI <br />
+            <span className="max-w-2xl mb-4 text-4xl text-transparent bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text">
+              in NFTWorld!
+            </span>
+          </h1>
+          <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
+            Fuel Your Artistic Vision, Earn with Passion - Where AI and
+            Blockchain Fuel the Art Market.
+          </p>
+          <button className="max-w-2xl mb-4 text-2xl bg-gradient-to-r from-pink-500 to-blue-500 text-white px-4 py-2 rounded-lg">
+            Discover
+          </button>
+        </div>
+
+        <div className="hidden lg:mt-10 lg:col-span-6 lg:flex">
+          <img
+            src="https://v5.airtableusercontent.com/v1/17/17/1686571200000/STgIOEZjldxpGD7JcCs5-A/8OLyHPum_zytCgeYweqm3WsZauafGvfi86L1NN9FUPEScEFX4w53ohPWhimava8KZpxJAB-biK3SodfFJBWrDQ/mWhozuxYDX2PSjgm66fj4t2gOioANcY-12hrfTU5I5E"
+            alt="hero image"
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
