@@ -114,7 +114,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Nifta</title>
         <meta
           name="AI generated NFTs Marketplace"
-          content="AI generated NFTs on the Theta blockchain"
+          content="AI generated NFTs on the Mantle blockchain"
         />
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>

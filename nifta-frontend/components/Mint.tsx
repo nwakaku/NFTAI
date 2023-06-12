@@ -5,7 +5,7 @@ import { ConnectionContext } from "../pages/_app";
 import { toast } from "react-toastify";
 import Link from "next/link";
 import axios from "axios";
-import { Web3Storage } from 'web3.storage';
+import { Web3Storage } from "web3.storage";
 
 type PromptForm = {
   prompt: string;
@@ -16,12 +16,14 @@ type UriData = {
   prompt: string;
 };
 
-function convertUriDataToFile(uriData: string, fileName: string): Promise<File> {
+function convertUriDataToFile(
+  uriData: string,
+  fileName: string
+): Promise<File> {
   return fetch(uriData)
     .then((response) => response.blob())
     .then((blob) => new File([blob], `${fileName}.jpg`));
 }
-
 
 export default function Mint() {
   const {
@@ -130,7 +132,10 @@ export default function Mint() {
     const file = await convertUriDataToFile(uriData.b64_json, uriData.prompt);
 
     // For web3.storage
-    const client = new Web3Storage({ token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDkyQmMzYmEyNEMwNzIyZUZkODg5NmIzOGQxYzI5ZWE0RUFiMjdiMjkiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODY0NjQzNjk1NjIsIm5hbWUiOiJmb3IgbmZ0YWkifQ.dyN1087A0XVpl12LBrjON3fxQLgQrRcAXpAW25YZ0IU" });
+    const client = new Web3Storage({
+      token:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDkyQmMzYmEyNEMwNzIyZUZkODg5NmIzOGQxYzI5ZWE0RUFiMjdiMjkiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODY0NjQzNjk1NjIsIm5hbWUiOiJmb3IgbmZ0YWkifQ.dyN1087A0XVpl12LBrjON3fxQLgQrRcAXpAW25YZ0IU",
+    });
     const cid = await client.put([file]);
 
     const URI = cid;
@@ -256,7 +261,7 @@ export default function Mint() {
             </div>
             <div className="flex items-center justify-between">
               <p className="font-semibold text-lg">Network</p>
-              <p className="text-lg text-gray-400">{"Theta testnet"}</p>
+              <p className="text-lg text-gray-400">{"mantle testnet"}</p>
             </div>
           </div>
           {mintingStatus === "minted" ? (

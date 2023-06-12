@@ -3,8 +3,7 @@ import axios from "axios";
 import { BigNumber, ethers } from "ethers";
 import { useContext, useEffect, useMemo, useState } from "react";
 import { toast } from "react-toastify";
-import { Web3Storage } from 'web3.storage'
-
+import { Web3Storage } from "web3.storage";
 
 interface Props {
   tokenID: BigNumber;
@@ -15,17 +14,13 @@ type ListedDetail = [boolean, BigNumber, string] & {
   lastOwner: string;
 };
 
-
-function getAccessToken () {
-  
-  return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDkyQmMzYmEyNEMwNzIyZUZkODg5NmIzOGQxYzI5ZWE0RUFiMjdiMjkiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODY0NjQzNjk1NjIsIm5hbWUiOiJmb3IgbmZ0YWkifQ.dyN1087A0XVpl12LBrjON3fxQLgQrRcAXpAW25YZ0IU"
+function getAccessToken() {
+  return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweDkyQmMzYmEyNEMwNzIyZUZkODg5NmIzOGQxYzI5ZWE0RUFiMjdiMjkiLCJpc3MiOiJ3ZWIzLXN0b3JhZ2UiLCJpYXQiOjE2ODY0NjQzNjk1NjIsIm5hbWUiOiJmb3IgbmZ0YWkifQ.dyN1087A0XVpl12LBrjON3fxQLgQrRcAXpAW25YZ0IU";
 }
 
-function makeStorageClient () {
-  return new Web3Storage({ token: getAccessToken() })
+function makeStorageClient() {
+  return new Web3Storage({ token: getAccessToken() });
 }
-
-
 
 export default function NFTListed({ tokenID }: Props) {
   const { connected, address, contract } = useContext(ConnectionContext);
@@ -42,25 +37,24 @@ export default function NFTListed({ tokenID }: Props) {
   const [tokenListedDataError, settokenListedDataError] = useState<any>(null);
   const [tokenListedDataLoading, settokenListedDataLoading] = useState(false);
 
-     async function retrieve(url: string): Promise<void> {
-  const client = makeStorageClient();
-  try {
-    const res = await client.get(url);
+  async function retrieve(url: string): Promise<void> {
+    const client = makeStorageClient();
+    try {
+      const res = await client.get(url);
 
-    if (res) {
-      const files = await res.files();
-      for (const file of files) {
-        console.log(`${file.cid} -- ${file.size}`);
-        setTokenMetaData(`https://dweb.link/ipfs/${file.cid}`)
+      if (res) {
+        const files = await res.files();
+        for (const file of files) {
+          console.log(`${file.cid} -- ${file.size}`);
+          setTokenMetaData(`https://dweb.link/ipfs/${file.cid}`);
+        }
+      } else {
+        throw new Error(`Failed to get ${url}`);
       }
-    } else {
-      throw new Error(`Failed to get ${url}`);
+    } catch (error) {
+      console.error(error);
     }
-  } catch (error) {
-    console.error(error);
   }
-}
-
 
   const sameOwner = useMemo(
     () =>
@@ -78,7 +72,6 @@ export default function NFTListed({ tokenID }: Props) {
       settokenListedDataLoading(true);
       const uri = await contract.tokenURI(tokenID);
       console.log(uri);
-      // const url = `https://data.thetaedgestore.com/api/v2/data/${uri}`;
 
       try {
         retrieve(uri);
