@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import { ConnectionContext } from "../pages/_app";
 
 const HARDHAT_NETWORK_ID = "31337";
-const MANTLE_TESTNET_NETWORK_ID = "0x16d";
+const MANTLE_TESTNET_NETWORK_ID = "0x1389";
 
 // This is an error code that indicates that the user canceled a transaction
 const ERROR_CODE_TX_REJECTED_BY_USER = 4001;
@@ -50,9 +50,7 @@ export default function Header() {
       return true;
     }
 
-    if (
-      window.ethereum.networkVersion === MANTLE_TESTNET_NETWORK_ID
-    ) {
+    if (window.ethereum.networkVersion === MANTLE_TESTNET_NETWORK_ID) {
       return true;
     }
     return false;
@@ -84,7 +82,10 @@ export default function Header() {
         <div className="flex items-center text-2xl">
           <Link href="/" legacyBehavior>
             <div>
-              <span className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-2 py-2 rounded-lg">M</span>MantleAI
+              <span className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-2 py-2 rounded-lg">
+                M
+              </span>
+              MantleAI
             </div>
           </Link>
         </div>
