@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Configuration, OpenAIApi } from "openai";
+import 'dotenv/config'
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "",
 });
 const openai = new OpenAIApi(configuration);
 
